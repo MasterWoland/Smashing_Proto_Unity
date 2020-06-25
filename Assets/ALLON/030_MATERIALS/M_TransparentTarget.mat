@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_TransparentShield
+  m_Name: M_TransparentTarget
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _ALPHAPREMULTIPLY_ON _GLOSSYREFLECTIONS_OFF _SPECULAR_SETUP
   m_LightmapFlags: 4
@@ -88,7 +88,7 @@ Material:
     - _DstBlend: 10
     - _EnvironmentReflections: 1
     - _GlossMapScale: 0
-    - _Glossiness: 0.718
+    - _Glossiness: 0.891
     - _GlossyReflections: 0
     - _Metallic: 0
     - _Mode: 3
@@ -105,7 +105,7 @@ Material:
     - _WorkflowMode: 0
     - _ZWrite: 0
     m_Colors:
-    - _BaseColor: {r: 0.66916054, g: 0.32894263, b: 0.9056604, a: 0.3529412}
-    - _Color: {r: 0.6265448, g: 0.22272162, b: 0.7264151, a: 0.47058824}
+    - _BaseColor: {r: 0.9433962, g: 0.9240914, b: 0.28924885, a: 0.3529412}
+    - _Color: {r: 0.04672481, g: 0.4716981, b: 0.07012654, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
