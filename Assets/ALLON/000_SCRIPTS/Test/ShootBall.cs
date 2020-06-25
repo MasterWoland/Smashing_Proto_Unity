@@ -30,7 +30,6 @@ public class ShootBall : MonoBehaviour
         _doLaunch = true;
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         if (!_doLaunch) return;
@@ -41,7 +40,7 @@ public class ShootBall : MonoBehaviour
         
         Debug.Log("Launch "+direction);
         
-        _rigidbody.AddForce(direction * 730f);
+        _rigidbody.AddForce(direction * 1200f);
 
         _doLaunch = false;
     }

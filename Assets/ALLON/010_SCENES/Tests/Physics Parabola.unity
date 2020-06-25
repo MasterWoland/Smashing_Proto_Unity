@@ -999,7 +999,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2031438247}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.49, y: 7, z: 15}
+  m_LocalPosition: {x: 3.67, y: 5.72, z: 15}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 611000410}
@@ -1036,7 +1036,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7b94d6e08b91eca458e2c78b747a200e, type: 2}
+  - {fileID: 2100000, guid: 1825f217fb60415489af2154b4c3af69, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1072,10 +1072,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1191422754676889164, guid: af6442d102fde51428dcc912bb3b4559,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 83d322d7bd4e5d945b218bf14a2fbcf4, type: 2}
     - target: {fileID: 1191422754676889166, guid: af6442d102fde51428dcc912bb3b4559,
         type: 3}
       propertyPath: m_Name
       value: DebugSphere
+      objectReference: {fileID: 0}
+    - target: {fileID: 1191422754676889166, guid: af6442d102fde51428dcc912bb3b4559,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1191422754676889170, guid: af6442d102fde51428dcc912bb3b4559,
         type: 3}
@@ -1200,6 +1210,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rect Shield
+      objectReference: {fileID: 0}
+    - target: {fileID: 3924101607620784326, guid: 86b89a4befbc8114eb09f14511ae6cbe,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86b89a4befbc8114eb09f14511ae6cbe, type: 3}
