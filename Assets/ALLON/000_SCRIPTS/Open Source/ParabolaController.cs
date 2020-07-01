@@ -1,8 +1,11 @@
+using System;
 using UnityEngine;
 using System.Collections.Generic;
 
 public class ParabolaController : MonoBehaviour
 {
+    public static event Action ParabolaFinished;
+    
     /// <summary>
     /// Animation Speed
     /// </summary>
@@ -81,6 +84,8 @@ public class ParabolaController : MonoBehaviour
 
         if (Animation && parabolaFly != null && animationTime < parabolaFly.GetDuration())
         {
+            // Parabola is busy
+            
             int parabolaIndexBefore;
             int parabolaIndexAfter;
             parabolaFly.GetParabolaIndexAtTime(animationTime, out parabolaIndexBefore);
@@ -97,8 +102,12 @@ public class ParabolaController : MonoBehaviour
         }
         else if (Animation && parabolaFly != null && animationTime > parabolaFly.GetDuration())
         {
+            // Parabola is finished
+            
             animationTime = float.MaxValue;
             Animation = false;
+            
+            ParabolaFinished?.Invoke();
         }
 
     }
