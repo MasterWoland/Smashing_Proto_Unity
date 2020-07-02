@@ -45,21 +45,21 @@ public class MoveBetweenTwoPoints : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        Debug.Log("__hit by " + other.gameObject.name);
+        // Debug.Log("__hit by " + other.gameObject.name);
 
         if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("__hit by player__");
+            // Debug.Log("__hit by player__");
             _isHit = true;
             
             Shield shield = other.gameObject.GetComponent<Shield>();
 
             if (shield)
             {
-                Debug.LogFormat("Shield speed: {0}, direction: {1}", shield.Speed, shield.Direction);
+                // Debug.LogFormat("Shield speed: {0}, direction: {1}", shield.Speed, shield.Direction);
 
                 Vector3 contactPoint = other.GetContact(0).point;
-                Debug.Log("Contact point: "+contactPoint);
+                // Debug.Log("Contact point: "+contactPoint);
                 
                 // Debug.Log("Contact point: "+other.GetContact(0).thisCollider.ClosestPoint());
                 // _rb.isKinematic = false;
