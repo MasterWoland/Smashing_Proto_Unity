@@ -38,7 +38,7 @@ public class BallCollision : MonoBehaviour
 
             Vector3 distanceToCenter = other.transform.parent.position - other.GetContact(0).point;
             // Debug.Log("[Ball] Hit position "+other.GetContact(0).point);
-            Debug.Log("[Ball] Hit position DISTANCE "+distanceToCenter.magnitude);
+            // Debug.Log("[Ball] Hit position DISTANCE "+distanceToCenter.magnitude);
 
             float distance = distanceToCenter.magnitude;
             if (distance <= 0.5f) // size is 1m, so radius is 0.5
