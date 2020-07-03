@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class BallCollision : MonoBehaviour
 {
-    public static event Action<float> MultiplierHit;
+    public static event Action<int> MultiplierHit;
     private bool _hasHitMultiplier = false;
 
     private void Awake()
@@ -32,10 +32,26 @@ public class BallCollision : MonoBehaviour
         else if (other.gameObject.CompareTag("Multiplier") && !_hasHitMultiplier)
         {
             _hasHitMultiplier = true;
-            Multiplier multiplier = other.gameObject.GetComponent<Multiplier>();
-            MultiplierHit?.Invoke(multiplier.GetMultiplier());
+            // Multiplier multiplier = other.gameObject.GetComponent<Multiplier>();
 
-            Debug.Log("[Ball] hit multiplier " + other.gameObject.name + ": " + multiplier.GetMultiplier());
+            // Debug.Log("[Ball] hit multiplier " + other.gameObject.name + ": " + multiplier.GetMultiplier());
+
+            Vector3 distanceToCenter = other.transform.parent.position - other.GetContact(0).point;
+            // Debug.Log("[Ball] Hit position "+other.GetContact(0).point);
+            Debug.Log("[Ball] Hit position DISTANCE "+distanceToCenter.magnitude);
+
+            float distance = distanceToCenter.magnitude;
+            if (distance <= 0.5f) // size is 1m, so radius is 0.5
+            {
+                MultiplierHit?.Invoke(5);
+            } else if (distance <= 1.5f)
+            {
+                MultiplierHit?.Invoke(3);
+            }
+            else
+            {
+                MultiplierHit?.Invoke(2);
+            }
         }
         else
         {

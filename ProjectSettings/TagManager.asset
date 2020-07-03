@@ -8,6 +8,7 @@ TagManager:
   - Rig
   - Multiplier
   - Ground
+  - Target
   layers:
   - Default
   - TransparentFX
@@ -22,8 +23,8 @@ TagManager:
   - Hole
   - Collider
   - Player
-  - 
-  - 
+  - Target
+  - Ball
   - 
   - 
   - 
