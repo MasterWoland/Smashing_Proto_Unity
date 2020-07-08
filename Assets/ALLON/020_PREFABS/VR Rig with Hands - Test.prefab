@@ -1403,6 +1403,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b2a5fa3b4363cc4a86eb174098ed06b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _prevPosition: {x: 0, y: 0, z: 0}
+  _curPosition: {x: 0, y: 0, z: 0}
+  Direction: {x: 0, y: 0, z: 0}
+  Speed: 0
+  Magnitude: 0
 --- !u!1 &5485721117066203296
 GameObject:
   m_ObjectHideFlags: 0
@@ -2395,6 +2400,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b2a5fa3b4363cc4a86eb174098ed06b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _prevPosition: {x: 0, y: 0, z: 0}
+  _curPosition: {x: 0, y: 0, z: 0}
+  Direction: {x: 0, y: 0, z: 0}
+  Speed: 0
+  Magnitude: 0
 --- !u!1001 &3689973011217888026
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2456,6 +2466,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5113232712986061184, guid: c7a5d4d006929c846bb6105502534dff,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5113232712986061184, guid: c7a5d4d006929c846bb6105502534dff,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5113232712986061184, guid: c7a5d4d006929c846bb6105502534dff,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 6296004330526764365, guid: c7a5d4d006929c846bb6105502534dff,
         type: 3}
@@ -2542,6 +2567,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5113232712986061184, guid: c7a5d4d006929c846bb6105502534dff,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5113232712986061184, guid: c7a5d4d006929c846bb6105502534dff,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5113232712986061184, guid: c7a5d4d006929c846bb6105502534dff,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 6296004330526764365, guid: c7a5d4d006929c846bb6105502534dff,
         type: 3}

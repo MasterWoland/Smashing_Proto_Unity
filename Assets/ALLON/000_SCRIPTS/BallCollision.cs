@@ -25,10 +25,6 @@ public class BallCollision : MonoBehaviour
         {
             Debug.Log("[Ball] hit player");
         }
-        else if (other.gameObject.CompareTag("Ground"))
-        {
-            Debug.Log("[Ball] hit ground");
-        }
         else if (other.gameObject.CompareTag("Multiplier") && !_hasHitMultiplier)
         {
             _hasHitMultiplier = true;
@@ -44,7 +40,8 @@ public class BallCollision : MonoBehaviour
             if (distance <= 0.5f) // size is 1m, so radius is 0.5
             {
                 MultiplierHit?.Invoke(5);
-            } else if (distance <= 1.5f)
+            }
+            else if (distance <= 1.5f)
             {
                 MultiplierHit?.Invoke(3);
             }
@@ -52,6 +49,10 @@ public class BallCollision : MonoBehaviour
             {
                 MultiplierHit?.Invoke(2);
             }
+        }
+        else if (other.gameObject.CompareTag("Ground"))
+        {
+            Debug.Log("[Ball] hit ground");
         }
         else
         {
