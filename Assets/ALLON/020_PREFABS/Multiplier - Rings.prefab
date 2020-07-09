@@ -920,7 +920,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3649180984366929618}
   - component: {fileID: 5597858495479151335}
-  - component: {fileID: 336904422499647752}
   m_Layer: 0
   m_Name: Collision (1)
   m_TagString: Multiplier
@@ -956,16 +955,3 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5076798556035486163, guid: 40a2f7da116079940a9f329a7f38ad9f, type: 3}
---- !u!114 &336904422499647752
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4315035010961028507}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a5e11feb1a0efa4291d9343e0237f8d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _multiplier: 2

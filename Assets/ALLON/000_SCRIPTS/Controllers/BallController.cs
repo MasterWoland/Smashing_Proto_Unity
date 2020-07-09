@@ -50,7 +50,7 @@ public class BallController : MonoBehaviour
     {
         // Debug.Log("[BallController] Prepare()");
 
-        _maxHeight = Random.Range(2.0f, 5.0f); // MRA: we may want to weigh this (curve?)
+        _maxHeight = Random.Range(1.5f, 4.0f); // MRA: we may want to weigh this (curve?)
 
         _spawnPosition = spawnPos;
         var position = GetTargetPosition(targetPos, out float posX, out float posZ);
@@ -94,7 +94,7 @@ public class BallController : MonoBehaviour
         posX = position.x;
         posZ = position.z;
         posX += Random.Range(-0.75f, 0.75f);
-        posZ += Random.Range(-0.5f, 1.25f);
+        posZ += Random.Range(-0.5f, 0.5f);
         return position;
     }
 
@@ -107,7 +107,7 @@ public class BallController : MonoBehaviour
 
     private void Reset()
     {
-        Debug.Log("RESET");
+        // Debug.Log("RESET");
         ShouldFollowParabola = false;
         gameObject.SetActive(false);
         _collisionChecker.Reset();
