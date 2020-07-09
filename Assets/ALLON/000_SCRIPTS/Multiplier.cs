@@ -22,7 +22,7 @@ public class Multiplier : MonoBehaviour
          Vector3 distanceToCenter = other.transform.position - this.transform.parent.position;
          
          float distance = distanceToCenter.magnitude;
-         Debug.Log("[TRIGGER] Distance = "+distance);
+         // Debug.Log("[TRIGGER] Distance = "+distance);
          
          // MultiplierHit?.Invoke(distance);
          

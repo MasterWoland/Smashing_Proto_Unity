@@ -15,7 +15,7 @@ public class TargetCollision : MonoBehaviour
       if (other.gameObject.CompareTag("Ball"))
       {
           TargetHit?.Invoke(Value);
-          Debug.Log("[Target] "+Value);
+          // Debug.Log("[Target] "+Value);
       } 
    }
 }
