@@ -40,7 +40,7 @@ public class ShieldCollision : MonoBehaviour
                 
                 Vector3 direction = shield.Direction;
                 direction.Normalize();
-                float force = shield.Speed * 150f;
+                float force = shield.Speed * 200f;
             
                 // MRA: add min and max values to force
                 _rigidbody.AddForce(direction * force, ForceMode.Impulse);

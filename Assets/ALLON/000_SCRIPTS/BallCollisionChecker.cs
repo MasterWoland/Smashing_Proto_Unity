@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Resources;
 using UnityEngine;
 
-public class BallCollision : MonoBehaviour
+public class BallCollisionChecker : MonoBehaviour
 {
     public static event Action<int> MultiplierHit;
     private bool _hasHitMultiplier = false;
@@ -14,7 +14,7 @@ public class BallCollision : MonoBehaviour
         Reset();
     }
 
-    private void Reset()
+    public void Reset()
     {
         _hasHitMultiplier = false;
     }
@@ -27,10 +27,10 @@ public class BallCollision : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("Multiplier") && !_hasHitMultiplier)
         {
-            _hasHitMultiplier = true;
-            // Multiplier multiplier = other.gameObject.GetComponent<Multiplier>();
+            _hasHitMultiplier = true; // triggers only the first multiplier that it hits
+            Multiplier multiplier = other.gameObject.GetComponent<Multiplier>();
 
-            // Debug.Log("[Ball] hit multiplier " + other.gameObject.name + ": " + multiplier.GetMultiplier());
+            Debug.Log("[Ball] hit multiplier " + other.gameObject.name + ": " + multiplier.GetMultiplier());
 
             Vector3 distanceToCenter = other.transform.parent.position - other.GetContact(0).point;
             // Debug.Log("[Ball] Hit position "+other.GetContact(0).point);
@@ -59,23 +59,4 @@ public class BallCollision : MonoBehaviour
             Debug.Log("[Ball] hit: " + other.gameObject.tag);
         }
     }
-
-    #region EVENTS
-
-    private void OnEnable()
-    {
-        HandController.TriggerPressed += OnTriggerPressed;
-    }
-
-    private void OnDisable()
-    {
-        HandController.TriggerPressed -= OnTriggerPressed;
-    }
-
-    private void OnTriggerPressed()
-    {
-        Reset();
-    }
-
-    #endregion
 }

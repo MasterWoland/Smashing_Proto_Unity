@@ -9,9 +9,9 @@ public class BallController : MonoBehaviour
     [HideInInspector] public bool IsHit = false;
     [HideInInspector] public bool ShouldFollowParabola = false;
     private ShieldCollision _shieldCollision;
+    private BallCollisionChecker _collisionChecker;
     private Vector3 _spawnPosition;
     private Vector3 _targetPosition;
-    // private Transform _transform;
     private Rigidbody _rigidbody;
     private float _timer = 0f;
     private float _speed = 2f; // MRA time to reach target position 
@@ -19,11 +19,12 @@ public class BallController : MonoBehaviour
 
     private void Awake()
     {
-        // _transform = transform;
         _rigidbody = GetComponent<Rigidbody>();
         _shieldCollision = GetComponent<ShieldCollision>();
+        _collisionChecker = GetComponent<BallCollisionChecker>();
         
         if(_shieldCollision == null) Debug.LogError("[BallController] No ShieldCollision component found.");
+        if(_collisionChecker == null) Debug.LogError("[BallController] No CollisionChecker component found.");
     }
 
     private void FixedUpdate()
@@ -41,7 +42,6 @@ public class BallController : MonoBehaviour
             BallNotHit?.Invoke(this);
 
             // Debug.Log("[BallController] X __ Ball not hit __ X");
-            
             Reset();
         }
     }
@@ -53,7 +53,7 @@ public class BallController : MonoBehaviour
         _maxHeight = Random.Range(2.0f, 5.0f); // MRA: we may want to weigh this (curve?)
 
         _spawnPosition = spawnPos;
-        var position = GetTargetPosition(targetPos, out var posX, out var posZ);
+        var position = GetTargetPosition(targetPos, out float posX, out float posZ);
         _targetPosition = new Vector3(posX, position.y, posZ);
 
         ResetRigidbody();
@@ -66,6 +66,7 @@ public class BallController : MonoBehaviour
     public void Launch()
     {
         // Debug.Log("[BallController] Launch");
+        _collisionChecker.Reset();
         ShouldFollowParabola = true;
     }
     
@@ -82,9 +83,6 @@ public class BallController : MonoBehaviour
     
     private void OnHitShield()
     {
-        Debug.Log("[BallController] BALL HIT !!!!");
-        
-        // stop following the parabola
         ShouldFollowParabola = false;
     }
     #endregion
@@ -96,7 +94,7 @@ public class BallController : MonoBehaviour
         posX = position.x;
         posZ = position.z;
         posX += Random.Range(-0.75f, 0.75f);
-        posZ += Random.Range(-0.75f, 1.0f);
+        posZ += Random.Range(-0.5f, 1.25f);
         return position;
     }
 
@@ -112,6 +110,7 @@ public class BallController : MonoBehaviour
         Debug.Log("RESET");
         ShouldFollowParabola = false;
         gameObject.SetActive(false);
+        _collisionChecker.Reset();
     }
     #endregion
 }

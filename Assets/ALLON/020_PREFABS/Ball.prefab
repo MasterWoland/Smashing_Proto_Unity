@@ -15,7 +15,8 @@ GameObject:
   - component: {fileID: 8783361673463541737}
   - component: {fileID: 3739430037515024531}
   - component: {fileID: 9103896725313242748}
-  m_Layer: 0
+  - component: {fileID: 7960434766837742276}
+  m_Layer: 14
   m_Name: Ball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 8783361673463541652}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -138,3 +139,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsHit: 0
   ShouldFollowParabola: 0
+--- !u!114 &7960434766837742276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8783361673463541652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60bb9b69ebe546243a6544eac53c896c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
