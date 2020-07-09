@@ -109,6 +109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Value: 10
+  _offsetZ: 1
 --- !u!1 &3909381437462589318
 GameObject:
   m_ObjectHideFlags: 0

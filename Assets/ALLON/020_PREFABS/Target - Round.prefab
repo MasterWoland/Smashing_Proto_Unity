@@ -314,3 +314,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Value: 5
+  _offsetZ: 0.5

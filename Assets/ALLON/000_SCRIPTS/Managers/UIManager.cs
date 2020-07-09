@@ -21,7 +21,7 @@ public class UIManager : MonoBehaviour
         _scoreText.text = "Score: "+_score.ToString("000000");
     }
 
-    private void OnTargetHit(int value)
+    private void OnTargetHit(int value, Vector3 position)
     {
         _score += value * _currentMultiplier;
         _scoreText.text = "Score: "+_score.ToString("000000");
