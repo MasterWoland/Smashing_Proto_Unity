@@ -157,7 +157,6 @@ MonoBehaviour:
   - {fileID: 1332742518}
   - {fileID: 2013943632}
   - {fileID: 645076530}
-  _balls: []
   SpawnTF: {fileID: 1518710305}
   TargetTF: {fileID: 1777499256}
 --- !u!4 &12999508
@@ -6270,6 +6269,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4278838852887333579, guid: 8fd7a51a13eb1284ca03c38b58d7a145,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8023804495282234229, guid: 8fd7a51a13eb1284ca03c38b58d7a145,
         type: 3}

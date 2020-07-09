@@ -18,7 +18,7 @@ public class BallCollisionChecker : MonoBehaviour
     {
         _hasHitMultiplier = false;
     }
-
+    
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Player"))

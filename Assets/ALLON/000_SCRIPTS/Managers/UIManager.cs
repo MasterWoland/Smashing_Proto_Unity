@@ -15,7 +15,7 @@ public class UIManager : MonoBehaviour
     
     private void OnEnable()
     {
-        BallCollisionChecker.MultiplierHit += OnMultiplierHit;
+        Multiplier.MultiplierHit += OnMultiplierHit;
         TargetCollision.TargetHit += OnTargetHit;
 
         _scoreText.text = "Score: "+_score.ToString("000000");
@@ -29,12 +29,12 @@ public class UIManager : MonoBehaviour
 
     private void OnDisable()
     {
-        BallCollisionChecker.MultiplierHit -= OnMultiplierHit;
+        Multiplier.MultiplierHit -= OnMultiplierHit;
     }
 
     private void OnMultiplierHit(int multiplier)
     {
-        Debug.Log("[UI] multiplier: "+multiplier);
+        // Debug.Log("[UI] multiplier: "+multiplier);
         _currentMultiplier = multiplier;
         _multiplierText.text = "Multiplier: " + _currentMultiplier.ToString()+"x";
     }
