@@ -8,7 +8,9 @@ public class LaunchManager : MonoBehaviour
 {
     [SerializeField] private GameObject _ballPrefab;
     [SerializeField] private int _ballPoolSize = 3; //MRA: from config
-    public BallController[] _balls;
+    [SerializeField] private Trajectory[] _trajectories;
+    private Trajectory _curTrajectory;
+    private BallController[] _balls;
     private int _curBallIndex = 0;
     private BallController _currentBall;
     private bool _isGameRunning = false;
@@ -77,9 +79,12 @@ public class LaunchManager : MonoBehaviour
 
     private void SetCurrentBall(int index)
     {
+        int amount = _trajectories.Length;
+        _curTrajectory = _trajectories[Random.Range(0, amount)];
+        
         _curBallIndex = index;
         _currentBall = _balls[_curBallIndex];
-        _currentBall.PrepareBall(SpawnTF.position, TargetTF.position);
+        _currentBall.PrepareBall(_curTrajectory.SpawnPosition, _curTrajectory.TargetPosition);
         _currentBall.Launch();
     }
     

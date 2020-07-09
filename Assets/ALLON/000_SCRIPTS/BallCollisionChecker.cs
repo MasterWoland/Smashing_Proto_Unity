@@ -27,7 +27,7 @@ public class BallCollisionChecker : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("Multiplier"))// && !_hasHitMultiplier)
         {
-            Debug.Log("[Ball] hit multiplier "+other.gameObject.name);
+            // Debug.Log("[Ball] hit multiplier "+other.gameObject.name);
             
             _hasHitMultiplier = true; // triggers only the first multiplier that it hits
 
