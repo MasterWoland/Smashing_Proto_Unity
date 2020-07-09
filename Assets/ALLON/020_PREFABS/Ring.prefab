@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4668747898111435504}
   - component: {fileID: 19401305311632773}
   - component: {fileID: 8274020156345539318}
+  - component: {fileID: 831570491181422368}
   m_Layer: 0
   m_Name: Ring
   m_TagString: Untagged
@@ -135,3 +136,17 @@ MonoBehaviour:
   torusSegments: 60
   coneSegments: 60
   slice: 110
+--- !u!64 &831570491181422368
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5878405040082739902}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
