@@ -9,17 +9,20 @@ public class LaunchManager : MonoBehaviour
     [SerializeField] private GameObject _ballPrefab;
     [SerializeField] private int _ballPoolSize = 3; //MRA: from config
     [SerializeField] private Trajectory[] _trajectories;
+    [SerializeField] private Transform _targetTransform;
     private Trajectory _curTrajectory;
-    private BallController[] _balls;
+    private BallController_AddForce[] _balls;
+    // private BallController[] _balls;
     private int _curBallIndex = 0;
-    private BallController _currentBall;
+    private BallController_AddForce _currentBall;
+    // private BallController _currentBall;
     private bool _isGameRunning = false;
     private const float TIME_BETWEEN_LAUNCHES = 3f;
     private float _curLaunchTimer = 0;
     
     // temp
-    public Transform SpawnTF;
-    public Transform TargetTF;
+    // public Transform SpawnTF;
+    // public Transform TargetTF;
     private Vector3 _targetPosition;
     private float _parabolaTime = 0f;
     private float _ballSpeed = 2f; // MRA time to reach target position 
@@ -54,12 +57,14 @@ public class LaunchManager : MonoBehaviour
     #region HELPERS
     private void InitBallPool()
     {
-        _balls = new BallController[_ballPoolSize];
-        BallController ball;
+        _balls = new BallController_AddForce[_ballPoolSize];
+        BallController_AddForce ball;
+        // BallController ball;
 
         for (int i = 0; i < _ballPoolSize; i++)
         {
-            ball = Instantiate(_ballPrefab, this.transform).GetComponent<BallController>();
+            ball = Instantiate(_ballPrefab, this.transform).GetComponent<BallController_AddForce>();
+            // ball = Instantiate(_ballPrefab, this.transform).GetComponent<BallController>();
             ball.gameObject.SetActive(false);
             _balls[i] = ball;
         }
@@ -70,11 +75,15 @@ public class LaunchManager : MonoBehaviour
         // // MRA: this may be placed elsewhere
         _curBallIndex++;
         if (_curBallIndex >= _ballPoolSize) _curBallIndex = 0;
-        SetCurrentBall(_curBallIndex);
+        // SetCurrentBall(_curBallIndex);
         // // -------------------------------
         
         SetCurrentBall(_curBallIndex);
         _curLaunchTimer = 0;
+        
+        // _currentBall.PrepareBall(_curTrajectory.SpawnPosition, _curTrajectory.TargetPosition);
+        _currentBall.PrepareBall(_curTrajectory.SpawnPosition, _curTrajectory.TargetPosition);
+        _currentBall.Launch();
     }
 
     private void SetCurrentBall(int index)
@@ -84,8 +93,6 @@ public class LaunchManager : MonoBehaviour
         
         _curBallIndex = index;
         _currentBall = _balls[_curBallIndex];
-        _currentBall.PrepareBall(_curTrajectory.SpawnPosition, _curTrajectory.TargetPosition);
-        _currentBall.Launch();
     }
     
     private void StartGame()
