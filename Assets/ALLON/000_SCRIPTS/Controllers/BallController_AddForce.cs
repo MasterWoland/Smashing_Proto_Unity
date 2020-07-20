@@ -79,7 +79,7 @@ public class BallController_AddForce : MonoBehaviour
         // Reset();
         _collisionChecker.Reset();
 
-        float strength = 10f;
+        float strength = 11f;
         Vector3 direction = _targetPosition - _spawnPosition;
         direction.Normalize();
         // Vector3 force = _camTransform.position - ;
