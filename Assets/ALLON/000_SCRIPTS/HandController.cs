@@ -50,7 +50,6 @@ public class HandController : BaseInputController
     }
 
     #region HELPER METHODS
-
     private Animator GetAnimator()
     {
         return gameObject.GetComponentInChildren<Animator>();
@@ -117,6 +116,5 @@ public class HandController : BaseInputController
 
         _rigTransform.Translate(direction * (Time.deltaTime * _locomotionSpeed));
     }
-
     #endregion
 }
